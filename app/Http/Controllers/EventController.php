@@ -49,11 +49,11 @@ class EventController extends Controller
             'location' => '800 Howard St., San Francisco, CA 94103',
             'description' => 'A chance to hear more about Google\'s developer products.',
             'start' => array(
-              'dateTime' => '2021-05-28T09:00:00-07:00',
+              'dateTime' => '2021-05-23T09:00:00-07:00',
               'timeZone' => 'America/Los_Angeles',
             ),
             'end' => array(
-              'dateTime' => '2021-05-28T17:00:00-07:00',
+              'dateTime' => '2021-05-23T17:00:00-07:00',
               'timeZone' => 'America/Los_Angeles',
             ),
             'recurrence' => array(
@@ -70,7 +70,7 @@ class EventController extends Controller
               ),
             ),
         ));
-        // $event = $service->events->insert($calendarId, $event);
+        $event = $service->events->insert($calendarId, $event);
         printf('Event created: %s\n', $event->htmlLink);
         return view('events_create');
     }

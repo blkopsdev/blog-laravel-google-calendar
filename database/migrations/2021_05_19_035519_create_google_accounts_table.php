@@ -25,6 +25,7 @@ class CreateGoogleAccountsTable extends Migration
             // Data.
             $table->string('google_id');
             $table->string('name');
+            $table->string('email');
             $table->json('token');
 
             // Timestamps.

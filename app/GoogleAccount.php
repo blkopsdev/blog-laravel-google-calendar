@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class GoogleAccount extends Model
 {
-    use Synchronizable;
 
     protected $fillable = [
-        'google_id', 'name', 'token',
+        'google_id', 'name', 'email', 'token',
     ];
 
     protected $casts = [
@@ -23,18 +22,4 @@ class GoogleAccount extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function calendars()
-    {
-        return $this->hasMany(Calendar::class);
-    }
-
-    public function synchronize()
-    {
-        SynchronizeGoogleCalendars::dispatch($this);
-    }
-
-    public function watch()
-    {
-        WatchGoogleCalendars::dispatch($this);
-    }
 }

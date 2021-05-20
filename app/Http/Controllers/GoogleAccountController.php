@@ -47,7 +47,9 @@ class GoogleAccountController extends Controller
                 'user_id' => auth()->user()->id,
             ],
             [
-                'name' => $results->emailAddresses[0]->value,
+                'google_id'=> $results->metadata->sources[0]->id,
+                'name' => $results->names[0]->displayName,
+                'email' => $results->emailAddresses[0]->value,
                 'token' => $google->getAccessToken(),
             ]
         );
