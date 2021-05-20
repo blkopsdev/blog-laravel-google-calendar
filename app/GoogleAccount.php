@@ -2,10 +2,6 @@
 
 namespace App;
 
-use App\Calendar;
-use App\Concerns\Synchronizable;
-use App\Jobs\SynchronizeGoogleCalendars;
-use App\Jobs\WatchGoogleCalendars;
 use App\Services\Google;
 use App\User;
 use Illuminate\Database\Eloquent\Model;

@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Calendar;
 use App\GoogleAccount;
 
 class Google
@@ -27,27 +26,6 @@ class Google
         $this->client->setAccessToken($token);
 
         return $this;
-    }
-
-    public function connectWithSynchronizable($synchronizable)
-    {
-        $token = $this->getTokenFromSynchronizable($synchronizable);
-        
-        return $this->connectUsing($token);
-    }
-
-    protected function getTokenFromSynchronizable($synchronizable)
-    {
-        switch (true) {
-            case $synchronizable instanceof GoogleAccount:
-                return $synchronizable->token;
-
-            case $synchronizable instanceof Calendar:
-                return $synchronizable->googleAccount->token;
-            
-            default:
-                throw new \Exception("Invalid Synchronizable");
-        }
     }
 
     public function revokeToken($token = null)

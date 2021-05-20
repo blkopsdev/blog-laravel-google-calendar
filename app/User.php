@@ -19,6 +19,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function googleAccount()
+    {
+        return $this->hasOne(GoogleAccount::class);
+    }
+
     public function googleAccounts()
     {
         return $this->hasMany(GoogleAccount::class);
