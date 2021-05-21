@@ -60,7 +60,7 @@ class EventController extends Controller
               'RRULE:FREQ=DAILY;COUNT=2'
             ),
             'attendees' => array(
-              array('email' => 'lpage@example.com')
+              array('email' => '')
             ),
             'reminders' => array(
               'useDefault' => FALSE,

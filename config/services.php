@@ -40,7 +40,7 @@ return [
             \Google_Service_Calendar::CALENDAR,
             \Google_Service_People::USERINFO_PROFILE,
             \Google_Service_People::USERINFO_EMAIL,
-            \Google_Service_people::CONTACTS_READONLY,
+            // \Google_Service_people::CONTACTS_READONLY,
         ],
         'approval_prompt' => 'force',
         'access_type' => 'offline',

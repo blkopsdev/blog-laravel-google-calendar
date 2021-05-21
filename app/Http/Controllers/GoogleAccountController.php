@@ -62,8 +62,6 @@ class GoogleAccountController extends Controller
      */
     public function destroy(GoogleAccount $googleAccount, Google $google)
     {
-        $googleAccount->calendars->each->delete();
-
         $googleAccount->delete();
 
         $google->revokeToken($googleAccount->token);
